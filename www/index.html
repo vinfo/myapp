@@ -40,13 +40,11 @@
     <ion-nav-view></ion-nav-view>
     <script type="text/javascript">
     alert(2);
-var lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
-alert(lockOrientation);
-if (lockOrientation("portrait-primary")) {
-  alert('orientation was locked');
-} else {
-  alert('orientation failed locked');
-}
+    document.addEventListener('deviceready', function(){
+        window.plugins.orientationLock.lock("portrait");  
+    });  
+    
+    alert(3);
     </script>
   </body>
 </html>
